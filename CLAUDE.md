@@ -10,7 +10,7 @@ Se um pedido conflitar com o briefing, aponte o conflito e pergunte antes de seg
 
 O briefing deixa várias coisas em aberto. Enquanto não forem definidas, use um marcador visível entre colchetes (ex.: `[a definir]`) em vez de inventar:
 
-- Endereço do espaço, número de WhatsApp, e-mail, Instagram/redes sociais
+- Endereço do espaço, e-mail, Instagram/redes sociais (WhatsApp já definido: +55 84 9620-8586)
 - Valores das sessões (ainda não decidido se aparecem no site)
 - Link da planilha de agenda (`AGENDA_CSV`) — ver "Agenda de horários" abaixo
 - Nº do CREFITO, logotipo, paleta oficial, fotos
