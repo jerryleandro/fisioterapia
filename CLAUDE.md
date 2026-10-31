@@ -12,7 +12,7 @@ O briefing deixa várias coisas em aberto. Enquanto não forem definidas, use um
 
 - Endereço do espaço, número de WhatsApp, e-mail, Instagram/redes sociais
 - Valores das sessões (ainda não decidido se aparecem no site)
-- Dias e horários de atendimento — a cliente **prefere não divulgar** (Q22)
+- Link da planilha de agenda (`AGENDA_CSV`) — ver "Agenda de horários" abaixo
 - Nº do CREFITO, logotipo, paleta oficial, fotos
 - Depoimentos, números de pacientes, avaliações, estatísticas
 - Política de cancelamento/reagendamento
@@ -20,6 +20,7 @@ O briefing deixa várias coisas em aberto. Enquanto não forem definidas, use um
 ## Decisões que já valem
 
 - Conversão principal: conhecer os serviços → falar pelo WhatsApp. A marcação é concluída no WhatsApp, não no site (sem agendamento automático, sem pagamento online, sem confirmação automática).
+- Agenda de horários (decidido em 30/10/2026, revê a Q22 do briefing; aprovação da cliente pendente): o site mostra os horários livres e o paciente escolhe um, mas a reserva só vale após confirmação no WhatsApp.
 - Serviços: Gerontologia, Ortopedia e Traumatologia, Terapia Manual. Nenhum tem destaque sobre os outros.
 - Atendimento individual, ~50 min, no espaço próprio ou em domicílio (Zona Sul de Natal; Leste e Oeste conforme distância). Preço difere entre os dois formatos.
 - Uma única profissional: Marana Ali — Fisioterapeuta, UFRN, especialização em Fisioterapia Gerontológica.
@@ -32,4 +33,12 @@ O briefing deixa várias coisas em aberto. Enquanto não forem definidas, use um
 
 - A linha que segue `<script type="__bundler/template">` contém o template da página como uma string JSON (com `</` escapado como `</`).
 - Dentro do template: o markup fica em `<x-dc>…</x-dc>` (bindings `{{ }}`, `<sc-if value>`, `<sc-for list as>`, eventos `sc-camel-on-click`, `<select>` vira `<sc-raw-select>`), e a lógica fica em `<script type="text/x-dc" data-dc-script>` numa `class Component extends DCLogic` com `renderVals()`.
+- Fotos ficam em `imagens/` (WebP otimizado) e são referenciadas por caminho relativo: a pasta precisa ser publicada junto com o `index.html`.
 - Para editar: decodificar essa linha com `JSON.parse`, alterar, e regravar com `JSON.stringify(...).replace(/<\//g, '<\\u002F')`. Não mexer no manifest (fontes/React em base64).
+
+## Agenda de horários
+
+- Grade: segunda a sexta, sessões de hora em hora das 7h às 19h (50 min + 10 de intervalo, até as 20h).
+- Em domicílio a sessão ocupa 1h15: só é oferecida se a hora seguinte também estiver livre, e a última é às 18h.
+- Os horários ocupados vêm de uma planilha Google que só a fisioterapeuta edita, publicada como CSV no link `AGENDA_CSV` (topo do script). A planilha lista só exceções: `Data | Hora | Situação` (hora em branco ou "dia todo" bloqueia o dia). Domicílio marcado = marcar as duas horas como ocupadas.
+- A planilha é pública para leitura: nunca colocar nome ou dados de paciente nela.

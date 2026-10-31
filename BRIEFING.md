@@ -104,6 +104,8 @@ As opções não aparecem claramente assinaladas.
 ### 22. Quais dias e horários estarão disponíveis para atendimento?
 **Resposta:** Prefere não divulgar no site.
 
+> **Atualização (30/10/2026):** decidido mostrar no site os horários livres (seg–sex, 7h–20h), com a confirmação feita pelo WhatsApp. Aprovação da cliente pendente.
+
 ### 23. Para atendimento domiciliar, existe alguma regra de distância ou região?
 **Resposta:** Preferencialmente Zona Sul de Natal, podendo se estender para as zonas Leste e Oeste dependendo da distância.
 
